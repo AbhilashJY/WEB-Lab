@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Growing/Shrinking</title>
+
+</head>
+
+<body>
+    <h3>4JK20CS047</h3>
+    <p id="demo"></p>
+    <script>
+        var var1 = setInterval(inTimer, 1000);
+        var size = 5;
+        var ids = document.getElementById("demo");
+
+        function inTimer() {
+            ids.innerHTML = "TEXT-GROWING";
+            ids.setAttribute('style', "font-size:" + size + "px;color:red");
+            size += 5;
+            if (size >= 50) {
+                clearInterval(var1);
+                setInterval(detimer, 1000);
+            }
+        }
+
+        function detimer() {
+            size -= 5;
+            ids.innerHTML = "TEXT-SHRINKING"
+            ids.setAttribute('style', "font-size:" + size + "px;color:blue");
+            if (size == 5) {
+                clearInterval(var2);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
